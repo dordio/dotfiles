@@ -1,6 +1,6 @@
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 syntax on             " enables syntax highlighting
 set number            " displays the line number column
