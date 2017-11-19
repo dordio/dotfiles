@@ -1,0 +1,10 @@
+# Criado por Pedro Dordio, Firstboot, Lda
+# Redirecciona a pasta public_html (raiz do dominio) para a subpasta public/outra à escolha
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?highersgps.pt$
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /public/$1
+RewriteCond %{HTTP_HOST} ^(www.)?highersgps.pt$
+RewriteRule ^(/)?$ public/index.php [L]
