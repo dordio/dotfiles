@@ -1,4 +1,3 @@
-# Criado por Pedro Dordio, Firstboot, Lda
 # Redirecciona a pasta public_html (raiz do dominio) para a subpasta public/outra à escolha
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^(www.)?highersgps.pt$
