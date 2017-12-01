@@ -69,3 +69,6 @@ export PATH=/home/pi/bin:$PATH
 echo ""
 neotech
 echo ""
+
+LS_COLORS='di=1;30'
+export LS-COLORS
