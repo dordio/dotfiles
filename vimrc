@@ -13,7 +13,9 @@ set ignorecase        " ignore case on search
 set incsearch         " show results as you type
 set hlsearch          " highlight search results
 set laststatus=2      " display status line on start
-set rnu               " enable relative numbering
+" set rnu               " enable relative numbering
+" set background=dark
+" set nohlsearch
 
 
 " SCROLLING
@@ -27,5 +29,6 @@ nnoremap <CR> o<Esc>
 autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
+" nnoremap <silent> <Esc> :noh<CR><Esc>
 
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
