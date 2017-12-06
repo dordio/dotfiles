@@ -71,5 +71,5 @@ neotech
 echo ""
 
 # LS_COLORS='di=1;4;90:*.jpg=35:*.png=35:*.gif=35:*.html=32:*.php=32:*.7z=33:*.zip=33:*.rar=33:*.tar=33:*.bz2=33:*.gz=33:*.lz=33:*.img=33:*.iso=33:*.css=36:'
-LS_COLORS='di=1;30'
-export LS-COLORS
+# LS_COLORS='di=1;30'
+# export LS-COLORS
