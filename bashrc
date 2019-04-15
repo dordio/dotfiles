@@ -7,7 +7,7 @@ shopt -s autocd
 
 PS1='\[\e[91m\]\w\$\[\e[0m\] '
 
-alias ls='ls -hN --color --group-directories-first"
+alias ls='ls -hN --color --group-directories-first'
 alias dt='date "+%F %T"'
 alias myip='curl whatismyip.level3.com'
 alias top='htop'
