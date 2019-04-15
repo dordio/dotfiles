@@ -1,2 +1,0 @@
-#!/bin/bash
-cowsay -f $1 "Welcome $USER!" | lolcat
