@@ -1,9 +1,8 @@
-##############################
-###### MY PERSONAL SHIT ######
-##############################
-# APPEND THIS FILE TO THE END OF YOUR .bashrc
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 shopt -s autocd
+shopt -s checkwinsize
 
 PS1='\[\e[91m\]\w\$\[\e[0m\] '
 
@@ -16,6 +15,7 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias sv='sudo vim'
 alias a='sudo apt'
+alias covid='curl https://corona-stats.online/pt?source=2'
 
 alias tdu="tmux resize-pane -U $1"
 alias tdd="tmux resize-pane -D $1"
@@ -27,3 +27,8 @@ alias tk="tmux kill-session -t $1"
 alias tl="tmux ls"
 
 export PATH=/home/dordio/.scripts:$PATH
+export EDITOR="vim"
+
+cd
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
