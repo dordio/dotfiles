@@ -1,5 +1,0 @@
-#!/bin/bash
-sudo apt-get install apache2 -y
-ln -s /var/www/html ~/html
-sudo chwon pi:pi /var/www/html
-sudo apt-get install php libapache2-mod-php -y
