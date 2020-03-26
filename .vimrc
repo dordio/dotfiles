@@ -19,12 +19,11 @@ set autowrite
 set autoread
 set ignorecase
 set incsearch
-set laststatus=2
 set rnu
 set nohls
 set nocompatible
-set path+=**
-set wildmenu
+"set path+=**
+"set wildmenu
 set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
@@ -33,7 +32,9 @@ let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:netrw_altv=1
 
-hi StatusLine ctermbg=63 ctermfg=0
-hi TabLineFill ctermfg=26
+set laststatus=2
+hi StatusLine ctermbg=242 ctermfg=235
+hi TabLineFill ctermfg=25
 hi TabLine ctermbg=26 ctermfg=7
 hi TabLineSel ctermbg=202 ctermfg=0
+hi VertSplit cterm=none ctermfg=235
