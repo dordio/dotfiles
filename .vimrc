@@ -1,29 +1,39 @@
-filetype plugin indent on
+filetype plugin on
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>4jwf>a
+
+syntax on
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
-syntax on             " enables syntax highlighting
-set number            " displays the line number column
-set noswapfile        " doesn't create a swapfile for opened files
-set autoindent        " auto indent lines on ENTER
-set showcmd           " show size of selection
-set autowrite         " don't need : to run commands
-set autoread          " reload files changed outside of vim
-set ignorecase        " ignore case on search
-set incsearch         " show results as you type
-set laststatus=2      " display status line on start
-set rnu               " enable relative numbering
+set number
+set noswapfile
+set autoindent
+set showcmd
+set autowrite
+set autoread
+set ignorecase
+set incsearch
+set laststatus=2
+set rnu
 set nohls
-
-" SCROLLING
+set nocompatible
+set path+=**
+set wildmenu
 set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
 
-call plug#begin('~/.vim/plugs')
-Plug 'preservim/nerdtree'
-call plug#end()
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_altv=1
 
-map <F6> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-let NERDTreeAutoDeleteBuffer=1
+hi StatusLine ctermbg=63 ctermfg=0
+hi TabLineFill ctermfg=26
+hi TabLine ctermbg=26 ctermfg=7
+hi TabLineSel ctermbg=202 ctermfg=0
