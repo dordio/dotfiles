@@ -29,5 +29,7 @@ export PATH=/home/dordio/.scripts:$PATH
 export EDITOR="vim"
 
 cd
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
