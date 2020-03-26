@@ -15,7 +15,6 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias sv='sudo vim'
 alias a='sudo apt'
-alias covid='curl https://corona-stats.online/pt?source=2'
 
 alias tdu="tmux resize-pane -U $1"
 alias tdd="tmux resize-pane -D $1"
