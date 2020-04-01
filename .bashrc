@@ -4,7 +4,8 @@ HISTFILESIZE=20000
 shopt -s autocd
 shopt -s checkwinsize
 
-PS1='\[\e[91m\]\w\$\[\e[0m\] '
+
+PS1='\[\e[91m\]\w\w>\[\e[0m\] '
 
 alias ls='ls -hN --color --group-directories-first'
 alias dt='date "+%F %T"'
