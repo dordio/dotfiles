@@ -24,9 +24,9 @@ set nohls
 set nocompatible
 "set path+=**
 "set wildmenu
-set scrolloff=5
-set sidescrolloff=15
-set sidescroll=1
+"set scrolloff=5
+"set sidescrolloff=15
+"set sidescroll=1
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
