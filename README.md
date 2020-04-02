@@ -1,6 +1,3 @@
-# Retrieve the from terminal dotfiles
+# Retrieve the dotfiles from terminal
 
-> curl https://raw.githubusercontent.com/dordio/dotfiles/master/.bashrc >> .bashrc
-> curl https://raw.githubusercontent.com/dordio/dotfiles/master/.vimrc >> .vimrc
-> curl https://raw.githubusercontent.com/dordio/dotfiles/master/.tmux.conf >> .tmux.conf
-> curl https://raw.githubusercontent.com/dordio/dotfiles/master/.vim/.skeleton.html >> .vim/.skeleton.html
+Use the getdotfiles bash scrip to download all the main dotfiles.
