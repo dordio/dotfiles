@@ -1,3 +1,3 @@
 ## Clone the files to home folder
 
-git clone https://github.com/dordio/dotfiles ~
+> git clone https://github.com/dordio/dotfiles ~
