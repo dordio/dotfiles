@@ -5,6 +5,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>4jwf>a
+imap jj <Esc>
 
 syntax on
 
@@ -12,6 +13,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
+set hidden
 set noswapfile
 set autoindent
 set showcmd
@@ -22,11 +24,9 @@ set incsearch
 set rnu
 set nohls
 set nocompatible
-"set path+=**
-"set wildmenu
-"set scrolloff=5
-"set sidescrolloff=15
-"set sidescroll=1
+" colorscheme dracula
+" set colorcolumn=80
+" highlight colorcolumn ctermbg=242 ctermfg=235
 
 let g:netrw_banner=0
 let g:netrw_liststyle=3
@@ -38,3 +38,7 @@ hi TabLineFill ctermfg=25
 hi TabLine ctermbg=26 ctermfg=7
 hi TabLineSel ctermbg=202 ctermfg=0
 hi VertSplit cterm=none ctermfg=235
+
+call plug#begin('~/.vim/plugged')
+    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+call plug#end()
