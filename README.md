@@ -1,6 +1,7 @@
 ## Getting the files
 
-Clone the files to home folder with:
+Clone the files with:
 ```
-git clone https://github.com/dordio/dotfiles ~
+git clone https://github.com/dordio/dotfiles [some folder]
 ```
+After that move everything to you home folder.
