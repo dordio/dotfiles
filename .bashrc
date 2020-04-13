@@ -4,10 +4,14 @@ HISTFILESIZE=20000
 shopt -s autocd
 shopt -s checkwinsize
 
-
 PS1='\[\e[91m\]\w~>\[\e[0m\] '
+#PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[0;34m\]]──[\e[1;37m\w\e[0;34m]──[\[\e[1;36m\]${HOSTNAME%%.*}\[\e[0;34m\]]\[\e[1;35m\]: \$\[\e[0;34m\]\n\[\e[0;34m\]└─╼ \[\e[1;35m\]>> \[\e[00;00m\]"
 
 alias ls='ls -hN --color --group-directories-first'
+alias la='ls -A'
+alias l='ls -CF'
+alias ll='ls -alF'
+#alias ..='cd ..'
 alias dt='date "+%F %T"'
 alias myip='curl whatismyip.level3.com'
 alias top='htop'
@@ -16,6 +20,8 @@ alias grep='grep --color=auto'
 alias v='vim'
 alias sv='sudo vim'
 alias a='sudo apt'
+alias mv='mv -i'
+alias rm='rm -i'
 
 alias tdu="tmux resize-pane -U $1"
 alias tdd="tmux resize-pane -D $1"
@@ -26,8 +32,10 @@ alias tn="tmux new -s $1"
 alias tk="tmux kill-session -t $1"
 alias tl="tmux ls"
 
-export PATH=/home/dordio/.scripts:$PATH
+export PATH=/home/pil/bin:$PATH
 export EDITOR="vim"
+export TERM=xterm-256color
+export HISTCONTROL=ignoreboth
 
 cd
 
