@@ -4,6 +4,7 @@ HISTFILESIZE=20000
 shopt -s autocd
 shopt -s checkwinsize
 
+
 PS1='\[\e[91m\]\w~>\[\e[0m\] '
 #PS1="\n\[\e[0;34m\]┌─[\[\e[1;36m\u\e[0;34m\]]──[\e[1;37m\w\e[0;34m]──[\[\e[1;36m\]${HOSTNAME%%.*}\[\e[0;34m\]]\[\e[1;35m\]: \$\[\e[0;34m\]\n\[\e[0;34m\]└─╼ \[\e[1;35m\]>> \[\e[00;00m\]"
 
