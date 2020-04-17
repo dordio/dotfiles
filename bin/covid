@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s https://corona-stats.online?top=25 | head -n -10 > ~/.cache/covid && cat ~/.cache/covid
