@@ -1,0 +1,2 @@
+#!/bin/bash
+curl -s https://corona-stats.online/pt?minimal=true | head -n -7
