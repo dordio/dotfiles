@@ -33,11 +33,11 @@ let g:netrw_liststyle=3
 let g:netrw_altv=1
 
 set laststatus=2
-hi StatusLine ctermbg=242 ctermfg=235
-hi TabLineFill ctermfg=25
-hi TabLine ctermbg=26 ctermfg=7
-hi TabLineSel ctermbg=202 ctermfg=0
-hi VertSplit cterm=none ctermfg=235
+" hi StatusLine ctermbg=242 ctermfg=235
+" hi TabLineFill ctermfg=25
+" hi TabLine ctermbg=26 ctermfg=7
+" hi TabLineSel ctermbg=202 ctermfg=0
+" hi VertSplit cterm=none ctermfg=235
 
 call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
