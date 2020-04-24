@@ -12,7 +12,6 @@ alias ls='ls -hN --color --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -alF'
-#alias ..='cd ..'
 alias dt='date "+%F %T"'
 alias myip='curl whatismyip.level3.com'
 alias top='htop'
@@ -35,7 +34,7 @@ alias tl="tmux ls"
 
 export PATH=/home/pil/bin:$PATH
 export EDITOR="vim"
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export HISTCONTROL=ignoreboth
 
 cd
@@ -43,3 +42,5 @@ cd
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
+
+neofetch
