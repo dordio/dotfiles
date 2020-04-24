@@ -34,7 +34,7 @@ mark c /mnt/c
 mark d /mnt/d
 
 
-colorscheme solarized-dark
+" colorscheme solarized-dark
 set viewcolumns=-80%{name}..,15%{size},5%{mtime}
 set timefmt="%d/%m %H:%M"
 " set dotfiles
