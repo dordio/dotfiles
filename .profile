@@ -14,7 +14,9 @@ HISTFILESIZE=20000
 shopt -s autocd
 shopt -s checkwinsize
 
-PS1='\[\e[32m\]\d | \A | [\w] >\[\e[0m\] '
+EMOJIS=(🍕 🍔 🌭 🧀 🥓 🍓 🍣 🍌 📷 💋 😊 💖 🎶 🤢 ✨)
+SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
+PS1='${SELECTED_EMOJI} \[\e[32m\]\d | \A | [\w] >\[\e[0m\] '
 
 alias ls='ls -hN --color --group-directories-first'
 alias la='ls -A'
