@@ -1,7 +1,5 @@
 ## Getting the files
 
-Clone the files with:
 ```
-git clone https://github.com/dordio/dotfiles [some folder]
+curl https://raw.githubusercontent.com/dordio/dotfiles/master/.profile > .profile
 ```
-After that move everything to your home folder.
