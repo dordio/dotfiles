@@ -16,8 +16,7 @@ shopt -s checkwinsize
 
 EMOJIS=(🍕 🍔 🌭 🧀 🥓 🍓 🍌 💋 😊 💖 🎶 🤢 👍 🎁 😎 😈 💀 👽 💩 🎱 🎮 🍩)
 SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
-#PS1='${SELECTED_EMOJI} \[\e[32m\]\d | \A | [\w] >\[\e[0m\] '
-PS1='${SELECTED_EMOJI} \[\e[32m\]>\[\e[0m\] '
+PS1='\n🏡\[\e[91m\] : \[\e[35m\]\w\n${SELECTED_EMOJI} \[\e[32m\]>\[\e[0m\] '
 
 alias ls='ls -hN --color --group-directories-first'
 alias la='ls -A'
