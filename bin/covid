@@ -9,3 +9,4 @@ fi
 echo ""
 echo ""
 curl -s https://corona-stats.online/pt?minimal=true | head -n -9
+read -n1
