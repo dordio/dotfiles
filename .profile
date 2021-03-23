@@ -35,7 +35,7 @@ alias a='sudo apt'
 alias mv='mv -i'
 alias rm='rm -i'
 alias nano='nano -m -g -c -i -y'
-alias fortune='fortune | cowsay | lolcat'
+alias fortune='fortune | cowsay'
 alias speedtest='speedtest --simple'
 
 alias tdu="tmux resize-pane -U $1"
@@ -53,3 +53,5 @@ export HISTCONTROL=ignoreboth
 eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
 
 uname -snr
+fortune
+cd
