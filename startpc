@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo etherwake -b -i wlan0 #insert mac address here
+sudo etherwake -b -i eth0 #insert mac address here
