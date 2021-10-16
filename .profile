@@ -4,8 +4,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/dev" ] ; then
+    PATH="$HOME/dev:$PATH"
 fi
 
 HISTSIZE=10000
