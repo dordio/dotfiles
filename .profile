@@ -16,7 +16,8 @@ shopt -s checkwinsize
 
 EMOJIS=(🍕 🍔 🌭 🧀 🥓 🍓 🍌 💋 😊 💖 🎶 🤢 👍 🎁 😎 😈 💀 👽 💩 🎱 🎮 🍩)
 SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
-PS1='\n\[\e[91m\]\[\e[35m\] \h\n \w\n${SELECTED_EMOJI} \[\e[32m\]>\[\e[0m\] '
+#PS1='\n\[\e[91m\]\[\e[35m\] \h\n \w\n${SELECTED_EMOJI} \[\e[32m\]>\[\e[0m\] '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 alias ls='ls -hN --color --group-directories-first'
 alias la='ls -A'
@@ -52,4 +53,4 @@ export HISTCONTROL=ignoreboth
 
 eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
 
-cd
+#eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/ys.omp.json)"
