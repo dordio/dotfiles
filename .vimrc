@@ -4,7 +4,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>4jwf>a
+"nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>4jwf>a
 imap jj <Esc>
 
 syntax on
@@ -39,6 +39,6 @@ set laststatus=2
 " hi TabLineSel ctermbg=202 ctermfg=0
 " hi VertSplit cterm=none ctermfg=235
 
-call plug#begin('~/.vim/plugged')
-    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"    Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+"call plug#end()
