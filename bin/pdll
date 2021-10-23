@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -gGah | awk '{printf "%s %6s %s\n", $1, $3, $7}'
+ls -gGah --color --group-directories-first | awk '{printf "%s %6s %s\n", $1, $3, $7}'
