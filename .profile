@@ -1,11 +1,5 @@
-if [ -n "$BASH_VERSION" ]; then
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
-fi
-
-if [ -d "$HOME/dev" ] ; then
-    PATH="$HOME/dev:$PATH"
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
 fi
 
 HISTSIZE=10000
@@ -14,9 +8,6 @@ HISTFILESIZE=20000
 shopt -s autocd
 shopt -s checkwinsize
 
-EMOJIS=(🍕 🍔 🌭 🧀 🥓 🍓 🍌 💋 😊 💖 🎶 🤢 👍 🎁 😎 😈 💀 👽 💩 🎱 🎮 🍩)
-SELECTED_EMOJI=${EMOJIS[$RANDOM % ${#EMOJIS[@]}]};
-#PS1='\n\[\e[91m\]\[\e[35m\] \h\n \w\n${SELECTED_EMOJI} \[\e[32m\]>\[\e[0m\] '
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 alias ls='ls -hN --color --group-directories-first'
@@ -24,15 +15,10 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -gGahN'
 alias dt='date "+%F %T"'
-alias myip='curl whatismyip.level3.com'
+alias myip='myip.sh'
 alias top='htop'
 alias ds='df -hT /'
 alias grep='grep --color=auto'
-alias v='vim'
-alias sv='sudo vim'
-alias n='nano'
-alias sn='sudo nano'
-alias a='sudo apt'
 alias mv='mv -i'
 alias rm='rm -i'
 alias nano='nano -m -g -c -i -y'
@@ -52,5 +38,3 @@ export EDITOR="nano"
 export HISTCONTROL=ignoreboth
 
 eval "$(dircolors -p | sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | dircolors /dev/stdin)"
-
-#eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/ys.omp.json)"
