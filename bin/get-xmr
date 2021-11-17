@@ -38,7 +38,7 @@ try:        # HARDER
         
         
         # change output colors according to value
-        if currentEurValue <= 1:
+        if currentEurValue <= 0.99:
             print('\033[91m')       # RED
         else:
             print('\033[92m')       # GREEN
