@@ -36,9 +36,9 @@ try:        # HARDER
         endPos = position + 11                                      # get the final character of the value
         
         if dataBank[endPos - 1:endPos].isalpha():                   # the original data rounds to one decimal when the value ends in 0...
-            endPos = endPos -1                                      # if this happens reduce the final position by 1
+            endPos = endPos - 1                                     # if this happens reduce the final position by 1
             
-        formatedDataBank = dataBank[position + 5:position + 11]     # extract the value we wan't
+        formatedDataBank = dataBank[startPos:endPos]                # extract the value we wan't
         tempValue = int(float(formatedDataBank))                    # convert the value to INT
         currentEurValue = tempValue * outputMiner                   # calculate the current earned value
         
