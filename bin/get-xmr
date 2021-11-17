@@ -21,7 +21,7 @@ clrscr()
 try:        # HARDER
     while True:
         # get data from the websites and parse the data
-        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')      # replace WALLET-ADDRESS with crypto coin wallet address
+        miner = requests.get('https://minexmr.com/api/main/user/stats?address=49GUgt1d3BYSgjooeQQvi2Ay2UmW4xpGU669Uq25rcHegWXWbZcrVkwXGXrqgPw137WPSXaDihjPWSw5vNYHFtC9GYPa7TQ')
         bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
         soupMiner = BeautifulSoup(miner.content, 'html.parser')
         soupBank = BeautifulSoup(bank.content, 'html.parser')
@@ -34,8 +34,10 @@ try:        # HARDER
         position = dataBank.find('eur')                             # find the starting position of the value we wan't
         startPos = position + 5                                     # get inicial character of the value
         endPos = position + 11                                      # get the final character of the value
-        if dataBank[endPos - 1:endPos].isalpha():                   # in case the final character is a letter reduce the final position by 1
-            endPos = endPos -1
+        
+        if dataBank[endPos - 1:endPos].isalpha():                   # the original data rounds to one decimal when the value ends in 0...
+            endPos = endPos -1                                      # if this happens reduce the final position by 1
+            
         formatedDataBank = dataBank[position + 5:position + 11]     # extract the value we wan't
         tempValue = int(float(formatedDataBank))                    # convert the value to INT
         currentEurValue = tempValue * outputMiner                   # calculate the current earned value
@@ -49,7 +51,7 @@ try:        # HARDER
             
 
         # print out all the info formated the way I wan't it
-        print('\033[1m' + '\n\n\n' + '  Current balance' + '\n  '
+        print('\033[1m' + '  Current balance' + '\n  '
               + str(round(outputMiner, 6)) + ' XMR' + '\n  '
               + str(round(currentEurValue, 2)) + ' EUR' + '\n\n\033[1;36m'
               + '  Rate ' + formatedDataBank + ' EUR')
