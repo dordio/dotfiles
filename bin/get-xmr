@@ -32,6 +32,10 @@ try:        # HARDER
         
         dataBank = soupBank.find(text=True)                         # get all text
         position = dataBank.find('eur')                             # find the starting position of the value we wan't
+        startPos = position + 5                                     # get inicial character of the value
+        endPos = position + 11                                      # get the final character of the value
+        if dataBank[endPos - 1:endPos].isalpha():                   # in case the final character is a letter reduce the final position by 1
+            endPos = endPos -1
         formatedDataBank = dataBank[position + 5:position + 11]     # extract the value we wan't
         tempValue = int(float(formatedDataBank))                    # convert the value to INT
         currentEurValue = tempValue * outputMiner                   # calculate the current earned value
