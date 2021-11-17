@@ -44,7 +44,7 @@ try:        # HARDER
             print('\033[92m')       # GREEN
             
 
-        # print out all the info formated the I wan't it
+        # print out all the info formated the way I wan't it
         print('\033[1m' + '\n\n\n' + '  Current balance' + '\n  '
               + str(round(outputMiner, 6)) + ' XMR' + '\n  '
               + str(round(currentEurValue, 2)) + ' EUR' + '\n\n\033[1;36m'
@@ -62,3 +62,5 @@ except KeyboardInterrupt:
 
 # reset the output color to white
 print('\033[0m')
+
+# GTFO
