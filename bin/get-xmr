@@ -18,7 +18,7 @@ def clrscr():
 clrscr()
 
 
-try:
+try:        # HARDER
     while True:
         # get data from the websites and parse the data
         miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')      # replace WALLET-ADDRESS with crypto coin wallet address
