@@ -6,51 +6,59 @@ from time import sleep
 from bs4 import BeautifulSoup
 
 
+# function to clear the screen
 def clrscr():
     if os.name == 'posix':
         _ = os.system('clear')
     else:
         _ = os.system('cls')
+
         
+# clear the screen
 clrscr()
 
 
 try:
     while True:
-        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')
+        # get data from the websites and parse the data
+        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')      # replace WALLET-ADDRESS with crypto coin wallet address
         bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
         soupMiner = BeautifulSoup(miner.content, 'html.parser')
         soupBank = BeautifulSoup(bank.content, 'html.parser')
 
-        dataMiner = soupMiner.find(text=True)
-        formatedDataMiner = dataMiner[13:23]
-        outputMiner = int(formatedDataMiner) * 0.000000000001
+        dataMiner = soupMiner.find(text=True)                       # get all text
+        formatedDataMiner = dataMiner[13:23]                        # pick the value we wan't
+        outputMiner = int(formatedDataMiner) * 0.000000000001       # format the value to #.######
         
-        dataBank = soupBank.find(text=True)
-        position = dataBank.find('eur')
-        formatedDataBank = dataBank[position + 5:position + 11]
-        
-        
-        tempValue = int(float(formatedDataBank))
-        currentEurValue = tempValue * outputMiner
+        dataBank = soupBank.find(text=True)                         # get all text
+        position = dataBank.find('eur')                             # find the starting position of the value we wan't
+        formatedDataBank = dataBank[position + 5:position + 11]     # extract the value we wan't
+        tempValue = int(float(formatedDataBank))                    # convert the value to INT
+        currentEurValue = tempValue * outputMiner                   # calculate the current earned value
         
         
+        # change output colors according to value
         if currentEurValue < 1:
-            print('\033[91m')
+            print('\033[91m')       # RED
         else:
-            print('\033[92m')
+            print('\033[92m')       # GREEN
             
 
+        # print out all the info formated the I wan't it
         print('\033[1m' + '\n\n\n' + '  Current balance' + '\n  '
               + str(round(outputMiner, 6)) + ' XMR' + '\n  '
               + str(round(currentEurValue, 2)) + ' EUR' + '\n\n\033[1;36m'
               + '  Rate ' + formatedDataBank + ' EUR')
         
+        # wait for 5 minutes
         sleep(300)
         
+        # clear the screen
         clrscr()
         
+# if CTRL + C is pressed exit the loop
 except KeyboardInterrupt:
         pass
 
+# reset the output color to white
 print('\033[0m')
