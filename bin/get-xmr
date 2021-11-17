@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+
+import requests
+import os
+from time import sleep
+from bs4 import BeautifulSoup
+
+
+def clrscr():
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        _ = os.system('cls')
+        
+clrscr()
+
+
+try:
+    while True:
+        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')
+        bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
+        soupMiner = BeautifulSoup(miner.content, 'html.parser')
+        soupBank = BeautifulSoup(bank.content, 'html.parser')
+
+        dataMiner = soupMiner.find(text=True)
+        formatedDataMiner = dataMiner[13:23]
+        outputMiner = int(formatedDataMiner) * 0.000000000001
+        
+        dataBank = soupBank.find(text=True)
+        position = dataBank.find('eur')
+        formatedDataBank = dataBank[position + 5:position + 11]
+        
+        
+        tempValue = int(float(formatedDataBank))
+        currentEurValue = tempValue * outputMiner
+        
+        
+        if currentEurValue < 1:
+            print('\033[91m')
+        else:
+            print('\033[92m')
+            
+
+        print('\033[1m' + '\n\n\n' + '  Current balance' + '\n  '
+              + str(round(outputMiner, 6)) + ' XMR' + '\n  '
+              + str(round(currentEurValue, 2)) + ' EUR' + '\n\n\033[1;36m'
+              + '  Rate ' + formatedDataBank + ' EUR')
+        
+        sleep(300)
+        
+        clrscr()
+        
+except KeyboardInterrupt:
+        pass
+
+print('\033[0m')
