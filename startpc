@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo etherwake -b -i eth0 #insert mac address here
