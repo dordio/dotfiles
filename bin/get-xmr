@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import requests
 import os
 from time import sleep
@@ -13,60 +12,72 @@ def clrscr():
     else:
         _ = os.system('cls')
 
-        
-# clear the screen
+# clear the screen  
 clrscr()
 
 
-try:        # HARDER
+try:    # HARDER
     while True:
-        # get data from the websites and parse the data
+        # get data from the website and parse it
         miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')
         bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
         soupMiner = BeautifulSoup(miner.content, 'html.parser')
         soupBank = BeautifulSoup(bank.content, 'html.parser')
 
-        dataMiner = soupMiner.find(text=True)                       # get all text
-        formatedDataMiner = dataMiner[13:23]                        # pick the value we wan't
-        outputMiner = int(formatedDataMiner) * 0.000000000001       # format the value to #.######
         
-        dataBank = soupBank.find(text=True)                         # get all text
-        position = dataBank.find('eur')                             # find the starting position of the value we wan't
-        startPos = position + 5                                     # get inicial character of the value
-        endPos = position + 11                                      # get the final character of the value
-        
-        if dataBank[endPos - 1:endPos].isalpha():                   # the original data rounds to one decimal when the value ends in 0...
-            endPos = endPos - 1                                     # if this happens reduce the final position by 1
-            
-        formatedDataBank = dataBank[startPos:endPos]                # extract the value we wan't
-        tempValue = int(float(formatedDataBank))                    # convert the value to INT
-        currentEurValue = tempValue * outputMiner                   # calculate the current earned value
+        # find and format mined value - START
+        dataMiner = soupMiner.find(text=True)
+        formatedDataMiner = dataMiner[13:23]
+        outputMiner = int(formatedDataMiner) * 0.000000000001
+        # find and format mined value - END
         
         
-        # change output colors according to value
-        if currentEurValue <= 0.99:
-            print('\033[91m')       # RED
+        # find, format and calculate earned value and exchange rate - START
+        dataBank = soupBank.find(text=True)
+        position = dataBank.find('eur')
+        startPos = position + 5
+        endPos = position + 11
+        
+        # the original value shows only 1 decimal if the last digit is 0
+        # this prevents getting a non numeric value into the variable
+        if dataBank[endPos - 1:endPos].isnumeric():
+            endPos = endPos
         else:
-            print('\033[92m')       # GREEN
+            endPos = endPos - 1
+            
+        formatedDataBank = dataBank[startPos:endPos]
+        tempValue = int(float(formatedDataBank))
+        currentEurValue = tempValue * outputMiner
+        # find, format and calculate earned value and exchange rate - END
+        
+        
+        # change colors acording to value
+        if currentEurValue <= 0.99:
+            print('\033[91m')   # RED
+        else:
+            print('\033[92m')   #GREEN
             
 
-        # print out all the info formated the way I wan't it
+        # prints everything formated the way I wan't it
         print('\033[1m' + '  Current balance' + '\n  '
               + str(round(outputMiner, 6)) + ' XMR' + '\n  '
               + str(round(currentEurValue, 2)) + ' EUR' + '\n\n\033[1;36m'
               + '  Rate ' + formatedDataBank + ' EUR')
         
-        # wait for 5 minutes
+        
+        # wait 5 minutes
         sleep(300)
+        
         
         # clear the screen
         clrscr()
         
+
 # if CTRL + C is pressed exit the loop
 except KeyboardInterrupt:
         pass
 
-# reset the output color to white
+# reset the color to white
 print('\033[0m')
 
 # GTFO
