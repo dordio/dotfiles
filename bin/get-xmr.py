@@ -18,10 +18,6 @@ def clrscr():
 clrscr()
 
 
-# define first value for exchange rate
-oldExchangeRate = 0
-
-
 try:
     while True:
         # get data from the site and parse it, one for the XMR value and the second for the exchange rate
@@ -55,19 +51,6 @@ try:
             endPos = endPos
         else:
             endPos = endPos - 1
-
-
-        # checks the value of the exchange rate to see if it's going up, down or same.
-        if oldExchangeRate == 0:
-            trend = ''
-        elif oldExchangeRate == currentExchangeRate:
-            trend = ''
-        elif oldExchangeRate < currentExchangeRate:
-            trend = '/ down'
-        elif oldExchangeRate > currentExchangeRate:
-            trend = '/ up'
-        else:
-            trend = 'WTF!?'
         
 
         # calculates and formats the value in euros and gets the exchange rate
@@ -76,8 +59,6 @@ try:
         tempValue = int(float(currentExchangeRate))
         # calculates the current balance in euros
         currentEurValue = tempValue * outputMiner
-        # sets the old exchange rate value
-        oldExchangeRate = currentExchangeRate
 ######### search and format the values we wan't - END
         
         
@@ -92,7 +73,7 @@ try:
         print('\033[1m' + '  Current balance' + '\n\n'
               + '  XMR .......... ' + str(round(outputMiner, 6)) + ' xmr' + '\n'
               + '  EUR .......... ' + str(round(currentEurValue, 2)) + ' eur' + '\n\n\033[1;36m'
-              + '  CER .......... ' + currentExchangeRate + ' eur ' + trend)
+              + '  CER .......... ' + currentExchangeRate + ' eur')
         
         
         # wait 5 minutes clear the screen
