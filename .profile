@@ -24,6 +24,7 @@ alias rm='rm -i'
 alias nano='nano -m -g -c -i -y'
 alias fortune='fortune | cowsay'
 alias speedtest='speedtest --simple'
+alias uptime='suptime -p | sed -e "s/up //g"'
 
 alias tdu="tmux resize-pane -U $1"
 alias tdd="tmux resize-pane -D $1"
