@@ -96,7 +96,7 @@ try:
         
         
         # wait 5 minutes clear the screen
-        sleep(60)
+        sleep(300)
         clrscr()
 
 
