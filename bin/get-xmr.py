@@ -21,7 +21,7 @@ clrscr()
 try:
     while True:
         # get data from the site and parse it, one for the XMR value and the second for the exchange rate
-        miner = requests.get('https://minexmr.com/api/main/user/stats?address=49GUgt1d3BYSgjooeQQvi2Ay2UmW4xpGU669Uq25rcHegWXWbZcrVkwXGXrqgPw137WPSXaDihjPWSw5vNYHFtC9GYPa7TQ')
+        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')
         bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
         soupMiner = BeautifulSoup(miner.content, 'html.parser')
         soupBank = BeautifulSoup(bank.content, 'html.parser')
