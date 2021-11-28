@@ -25,7 +25,7 @@ oldEurValue = 0.00
 try:    # HARDER
     while True:
         # get data from the site and parse it, one for the XMR value and the second for the exchange rate
-        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET-ADDRESS')
+        miner = requests.get('https://minexmr.com/api/main/user/stats?address=WALLET')
         bank = requests.get('https://minexmr.com/api/main/pool/stats?27285733')
         soupMiner = BeautifulSoup(miner.content, 'html.parser')
         soupBank = BeautifulSoup(bank.content, 'html.parser')
@@ -35,7 +35,7 @@ try:    # HARDER
         # gest and formats the value of XMR
         dataMiner = soupMiner.find(text=True)
         outputMiner = dataMiner[13:23]
-        formatedDataMiner = int(outputMiner) * 0.000000000001
+        formatedDataMiner = int(outputMiner) * 0.00000000001
         
         
         # gets and formats the value of the exchange rate
@@ -65,14 +65,7 @@ try:    # HARDER
         # calculates the current balance in euros
         currentEurValue = tempValue * formatedDataMiner
 ######### search and format the values we wan't - END
-        
-        
-        # sets some colors according to the value of how much rupies we have
-        if currentEurValue <= 0.99:
-            print('\033[91m')   # RED
-        else:
-            print('\033[92m')   # GREEN
-            
+                    
         
         # calculate the exchange rate diference, in case there is none, don't
         if oldEurValue == 0:
@@ -81,20 +74,34 @@ try:    # HARDER
             difEurValue = tempValue - oldEurValue
         
         
+        # add a plus sign if the diference is positive
+        if difEurValue > 0:
+            thingy = '+'
+        else:
+            thingy = ''
+            
+        
+        # sets some colors according to the value of how much rupies we have
+        if currentEurValue <= 0.99:
+            print('\033[91m')   # RED
+        else:
+            print('\033[92m')   # GREEN
+
+        
         # display everything formated the way we wan't it
         print('\033[1m' + '  Current balance' + '\n\n'
-              + '  XMR .......... ' + str(round(formatedDataMiner, 6)) + ' xmr' + '\n'
-              + '  EUR .......... ' + str(round(currentEurValue, 2)) + ' eur' + '\n\n\033[1;36m'
-              + '  CER .......... ' + currentExchangeRate + ' eur' + '\n\n'
-              + '  CER changed by ' + str(round(difEurValue, 2)) + ' eur')
+              + '  XMR ........ ' + str(round(formatedDataMiner, 6)) + ' xmr' + '\n'
+              + '  EUR ........ ' + str(round(currentEurValue, 2)) + ' eur' + '\n\n\033[1;36m'
+              + '  CER ........ ' + currentExchangeRate + ' eur' + '\n'
+              + '               ' + thingy + str(round(difEurValue, 2)) + ' eur ')
         
         
         # get the new old exchange rate value
         oldEurValue = tempValue
         
         
-        # wait 5 minutes and clears the screen
-        sleep(300)
+        # wait 1 minute and clears the screen
+        sleep(60)
         clrscr()
 
 
