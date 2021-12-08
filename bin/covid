@@ -1,0 +1,12 @@
+#!/bin/bash
+clear
+if [ -z "$1" ]
+then
+    curl -s https://corona-stats.online/?top=15\&minimal=true | head -n -10
+else
+    curl -s https://corona-stats.online/?top=$1\&minimal=true | head -n -10
+fi
+echo ""
+echo ""
+curl -s https://corona-stats.online/pt?minimal=true | head -n -9
+read -n1
