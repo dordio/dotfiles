@@ -1,0 +1,2 @@
+#!/bin/bash
+vivaldi-stable & xdotool search --sync --onlyvisible --name "Start Page - Vivaldi" key ctrl+F11
