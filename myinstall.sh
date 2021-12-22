@@ -61,5 +61,10 @@ curl https://raw.githubusercontent.com/dordio/regolith/main/Xresources > ~/.conf
 chmod +x ~/bin/*
 
 
+# change default terminal emulator and shell
+sudo update-alternatives --config x-terminal-emulator
+chsh -s /usr/bin/fish
+
+
 # restart the pc
 reboot
