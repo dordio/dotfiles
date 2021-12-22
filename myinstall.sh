@@ -24,15 +24,15 @@ mkdir ~/.config/regolith/i3xrocks/conf.d
 
 
 # install some stuff
-sudo apt install vim nomacs nitrogen mousepad gpick keepassxc gnome-tweaks alacritty htop thunar transmission fonts-firacode
+sudo apt install vim nomacs nitrogen mousepad gpick keepassxc gnome-tweaks alacritty htop thunar transmission fonts-firacode neofetch fish -y
  
 # install regolith desktop
 sudo add-apt-repository ppa:regolith-linux/release
-sudo apt install regolith-desktop-complete
+sudo apt install regolith-desktop-complete -y
 
 
 # install i3-renameworkspaces and download config
-sudo apt install liblinux-inotify2-perl
+sudo apt install liblinux-inotify2-perl -y
 curl https://raw.githubusercontent.com/mh21/i3-renameworkspaces/master/i3-renameworkspaces.pl > ~/bin/i3-renameworkspaces.pl
 curl https://raw.githubusercontent.com/dordio/regolith/main/.i3workspaceconfig > ~/.i3workspaceconfig
 
