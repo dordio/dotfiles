@@ -3,6 +3,5 @@ nitrogen --restore
 while [ True ]
 do
     nitrogen --random --head=0 --save --set-zoom-fill
-    nitrogen --random --head=1 --save --set-zoom-fill
     sleep 600
 done
