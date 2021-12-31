@@ -1,0 +1,14 @@
+#[vivaldi]
+#full_text=w
+#command=vivaldi >/dev/null
+#interval=0
+
+#[alacritty]
+#full_text=t
+#command=alacritty >/dev/null
+#interval=0
+
+#[thunar]
+#full_text=f
+#command=thunar ~ >/dev/null
+#interval=0

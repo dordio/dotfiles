@@ -1,0 +1,4 @@
+# Fetch the public IP address only on startup
+[public-ip]
+command=wget -qO - whatismyip.level3.com
+interval=once
