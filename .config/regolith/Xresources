@@ -1,0 +1,30 @@
+i3-wm.workspace.auto_back_and_forth: yes
+i3-wm.bar.stripworkspacenumbers: no
+
+i3-wm.program.unclutter: :
+
+i3-wm.gaps.inner.size: 10
+i3-wm.gaps.outer.size: 5
+
+i3-wm.bar.position: top
+i3-wm.bar.separator.color: #7c83a5
+i3-wm.bar.separator: "|"
+i3-wm.bar.mode: dock
+
+Xft.dpi: 96
+i3-wm.window.border.size: 1
+i3-wm.hide.edge.borders: yes
+
+
+i3-wm.bar.font:	pango:JetBrains Mono Medium 11
+#, JetBrains Mono Medium 13
+i3xrocks.value.font: JetBrains Mono Medium 11
+rofi.font: JetBrains Mono Medium 12
+
+gnome.wallpaper:
+#gnome.gtk.theme: Dracula
+#gnome.icon.theme: Papirus Bluegrey
+
+i3xrocks.date.format2: %a %d %b %H:%M
+ 
+i3-wm.bar.trayoutput: none
