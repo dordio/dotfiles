@@ -1,0 +1,22 @@
+{
+    "classes": {
+        "firefox": "fox",
+        "alacritty": "trm",
+        "vivaldi-stable": "viv",
+        "whatsapp-for-linux": "wap",
+        "thunar": "fls",
+        "RDC": "rdc",
+        "mousepad": "pad",
+        "gnome-calculator": "clc",
+        "image lounge": "img",
+        "VirtualBox Machine": "vm",
+        "transmission-gtk": "dl",
+        "org.gnome.nautilus": "nau"
+    },
+    "instances": {
+        
+    },
+    "staticnames": {
+        
+    }
+}
