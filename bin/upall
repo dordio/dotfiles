@@ -2,4 +2,7 @@
 sudo apt update
 sudo apt upgrade -y
 flatpak upgrade
-ansible-playbook ~/ansible/playbooks/apt.yml --ask-vault-pass
+#ansible-playbook ~/ansible/playbooks/apt.yml --ask-vault-pass
+ssh rpi "sudo apt update && sudo apt upgrade -y"
+ssh pizero "sudo apt update && sudo apt upgrade -y"
+ssh pizero "pihole -up"
